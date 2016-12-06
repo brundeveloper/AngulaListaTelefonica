@@ -1,0 +1,47 @@
+<div class="jumbotron"> <!-- ng-controller="listaTelefonicaCtrl" -->
+	<form name="contatoForm">
+		<select class="form-control" ng-model="contato.tipo">
+			<option value="">Selecione o tipo</option>
+			<option>Pessoa Fisica</option>
+			<option>Pessoa Juridica</option>
+		</select>
+
+		<div ng-if="(contato.tipo == 'Pessoa Fisica')">
+			<input type="text" class="form-control" ng-model="contato.nome" name="nome" placeholder="Nome" ng-required="true" ng-minlength="2" />
+		</div>
+		<div ng-if="(contato.tipo == 'Pessoa Juridica')">
+			<input type="text" class="form-control" ng-model="contato.nomeFantasia" name="nomeFantasia" placeholder="Nome Fantasia" ng-required="true" ng-minlength="2" />
+			<input type="text" class="form-control" ng-model="contato.razaoSocial" name="razaoSocial" placeholder="Razao Social" ng-required="true" ng-minlength="2" />
+		</div>
+
+		<input type="text" class="form-control" ng-model="contato.telefone" name="telefone" placeholder="Telefone" ng-required="true" ng-pattern="/^\d{4,5}-\d{4}$/" />
+		<input type="text" class="form-control" ng-model="contato.data" name="data" placeholder="Data" ui-date />
+
+		<select class="form-control" ng-model="contato.operadora" ng-options="operadora.nome + '( ' + (operadora.preco | currency) + ' )' group by operadora.categoria for operadora in operadoras | orderBy:'nome'">
+			<option value="">Selecione uma Operadora</option>
+		</select>
+	</form>
+
+	<div ng-messages="contatoForm.nome.$error" ng-show="contatoForm.nome.$dirty">
+		<div ng-message="required" class="alert alert-danger">
+			Por favor, preencha o nome!
+		</div>
+		<div ng-message="minlength" class="alert alert-danger">
+			O campo nome deve ter no minimo 2 caracteres!
+		</div>
+	</div>
+
+	<div ng-messages="contatoForm.telefone.$error" ng-show="contatoForm.telefone.$dirty">
+		<div ng-message="required" class="alert alert-danger">
+			Por favor, preencha o telefone!
+		</div>
+		<div ng-message="pattern" class="alert alert-danger">
+			O campo telefone deve ter o formato 99999-9999
+		</div>
+	</div>
+
+	<button class="btn btn-primary btn-block" ng-click="adicionarContato(contato)" ng-disabled="contatoForm.$invalid">Adicionar Contato</button>
+
+	<hr/>
+	<a class="btn btn-primary btn-block" href="#/contatos">Voltar</a>
+</div>

@@ -1,0 +1,21 @@
+<div class="jumbotron"> <!-- ng-controller="detalhesContatoCtrl" -->
+	<h3>{{app}}</h3>
+	
+	<table class="table">
+		<tr>
+			<td>{{contato.nome | name}}</td>
+		</tr>
+		<tr>
+			<td>{{contato.telefone}}</td>
+		</tr>
+		<tr>
+			<td>{{contato.data | date:'dd/MM/yyyy HH:mm'}}</td>
+		</tr>
+		<tr>
+			<td>{{contato.operadora.nome}}</td>
+		</tr>
+	</table>
+
+	<hr/>
+	<a class="btn btn-primary btn-block" href="#/contatos">Voltar</a>
+</div>

@@ -1,5 +1,9 @@
 angular.module("listaTelefonica").filter("name", function(){
 	return function(input){
+		if (!input){
+			return "";	
+		}
+
 		var listaDeNomes = input.split(" ");
 
 		var listaDeNomesFormatada = listaDeNomes.map(function(nome){
