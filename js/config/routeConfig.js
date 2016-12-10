@@ -23,6 +23,10 @@ angular.module("listaTelefonica").config(function($routeProvider){
 		}
 	});
 
+	$routeProvider.when("/node", {
+		templateUrl: "view/node.html"
+	});
+
 	$routeProvider.when("/error", {
 		templateUrl: "view/error.html"
 	});

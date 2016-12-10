@@ -1,9 +1,9 @@
 angular.module("listaTelefonica").controller("listaTelefonicaCtrl", function(
-		$scope,
-		$filter,
-		contatosAPI,
-		operadorasAPI,
-		serialGenerator
+	$scope,
+	$filter,
+	contatosAPI,
+	operadorasAPI,
+	serialGenerator
 ){
 	$scope.app = $filter("upper")("Lista Telefonica");
 
