@@ -1,3 +1,3 @@
 angular.module("listaTelefonica").value("config", {
-	baseUrl: "http://localhost/BCunha/Treinamentos/Angular/listatelefonica"
+	baseUrl: "http://localhost/Cursos/Angular/listatelefonica"
 });
