@@ -1,0 +1,24 @@
+{
+  "name": "angularlistatelefonica",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brundeveloper/AngulaListaTelefonica.git"
+  },
+  "author": "BrunDeveloper",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brundeveloper/AngulaListaTelefonica/issues"
+  },
+  "homepage": "https://github.com/brundeveloper/AngulaListaTelefonica#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2"
+  }
+}

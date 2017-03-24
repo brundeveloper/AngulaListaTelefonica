@@ -1,8 +1,15 @@
+/////////////////////////////////////////////////////////////
 //Obtem o http
 var http = require("http");
 
 //Importa o App
 var app = require("./config/app");
 
-//
-console.info(app);
+/////////////////////////////////////////////////////////////
+//Liga o Servidor
+http.createServer(app).listen(3000, function(){
+	//Mostra o servidor ligado
+	console.info("Servidor ligado - porta: " + this.address().port);
+});
+
+/////////////////////////////////////////////////////////////
